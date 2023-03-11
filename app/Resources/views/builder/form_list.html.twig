@@ -1,0 +1,16 @@
+{% extends "default/_page.html.twig" %}
+
+{% block content %}
+    <div id="forms">
+        {% if forms is defined and forms|length > 0 %}
+            <ul>
+                {% for form in forms %}
+                    <li>
+                        <a href="{{ path('app_forms_form', { 'id' : form.id }) }}">{{ form.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    <a href="{{ path('app_forms_form') }}">Ajouter un formulaire</a>
+{% endblock %}

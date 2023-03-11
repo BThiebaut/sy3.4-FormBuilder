@@ -2,8 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  {% block head %}
+  {% block title %}
     <title>Un truc</title>
+  {% endblock %}
+  {% block style %}
     {% stylesheets
       '@AppBundle/Resources/public/css/default.css'
      %}
@@ -13,6 +15,8 @@
 </head>
 <body>
     {% block content %}
+    {% endblock %}
+    {% block javascripts %}
     {% endblock %}
 </body>
 </html>

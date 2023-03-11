@@ -12,6 +12,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 * @ORM\Entity(repositoryClass="AppBundle\Repository\FormFieldRepository")
 */
 class FormField {
+
+    const FIELD_NAME_PREFIX = "field_";
+    const FIELD_NAME_NEW = "field_new";
     
     /**
     * @var integer
@@ -108,7 +111,7 @@ class FormField {
      *
      * @ORM\Column(name="choice_label", type="string", nullable=true)
      */
-    private $ChoiceLabel;
+    private $choiceLabel;
 
 
     public function __construct()
@@ -427,28 +430,29 @@ class FormField {
         return $this;
     }
 
+
+
     /**
-     * Get the value of ChoiceLabel
+     * Get the value of choiceLabel
      *
      * @return  string
      */ 
     public function getChoiceLabel()
     {
-        return $this->ChoiceLabel;
+        return $this->choiceLabel;
     }
 
     /**
-     * Set the value of ChoiceLabel
+     * Set the value of choiceLabel
      *
-     * @param  string  $ChoiceLabel
+     * @param  string  $choiceLabel
      *
      * @return  self
      */ 
-    public function setChoiceLabel(string $ChoiceLabel)
+    public function setChoiceLabel(string $choiceLabel = null)
     {
-        $this->ChoiceLabel = $ChoiceLabel;
+        $this->choiceLabel = $choiceLabel;
 
         return $this;
     }
-
 }
