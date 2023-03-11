@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  {% block head %}
+    <title>Un truc</title>
+    {% stylesheets
+      '@AppBundle/Resources/public/css/default.css'
+     %}
+      <link href="{{ asset_url }}" rel="stylesheet" type="text/css">
+    {% endstylesheets %}
+  {% endblock %}
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
